@@ -7,7 +7,7 @@ import br.com.projetofinanceiro.bo.Item;
 
 public class Orcamento {
 	private double valor;
-	private List<Item> listaItens;
+	private List<Item> listaItens = new ArrayList<Item>();
 
 	public Orcamento(double valor) {
 		super();
