@@ -10,7 +10,7 @@ public class RespostaEmPorcento implements Resposta {
 	
 	
 	public RespostaEmPorcento(Resposta proximo) {
-		this.proximo = proximo;
+		this.proximo = null;
 		
 	}
 
@@ -18,8 +18,10 @@ public class RespostaEmPorcento implements Resposta {
 	public void responde(Requisicao requisicao, Conta conta) {
 		if (requisicao.getFormato() == Formato.PORCENTO) {
 			System.out.println(conta.getTitular() + "%" + conta.getSaldo());
-		} else {
+		} else if (proximo != null) {
 			proximo.responde(requisicao, conta);
+		}else{
+			throw new RuntimeException("Formato de resposta não encontrado");
 		}
 
 	}
