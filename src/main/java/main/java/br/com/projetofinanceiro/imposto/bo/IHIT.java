@@ -1,29 +1,32 @@
 package main.java.br.com.projetofinanceiro.imposto.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.projetofinanceiro.bo.Item;
 import main.java.br.com.projetofinanceiro.bo.Orcamento;
 
-public class ICCP extends TemplateDeImpostoCondicional {
+public class IHIT extends TemplateDeImpostoCondicional{
 
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.6;
+		return orcamento.getValor() * (0.01 * orcamento.getListaItens().size());
 	}
 
 	@Override
 	public double maximaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.10;
+		return orcamento.getValor() * 0.13 + 100;
 	}
 
 	@Override
 	public boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() > 500 && temItemMaiorQue100ReaisNo(orcamento);
-	}
-
-	private boolean temItemMaiorQue100ReaisNo(Orcamento orcamento) {
+		List<String>noOrcamento = new ArrayList<>();
+		
 		for (Item item : orcamento.getListaItens()) {
-			if (item.getValor() > 100.0) {
+			if(noOrcamento.contains(item.getDescricao())) {
 				return true;
+			}else {
+				noOrcamento.add(item.getDescricao());
 			}
 		}
 		return false;
