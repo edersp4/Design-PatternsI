@@ -7,12 +7,12 @@ public class ICCP extends TemplateDeImpostoCondicional {
 
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.6;
+		return orcamento.getValor() * 0.6 + calculoDoOutroImposto(orcamento);
 	}
 
 	@Override
 	public double maximaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.10;
+		return orcamento.getValor() * 0.10 + calculoDoOutroImposto(orcamento);
 	}
 
 	@Override

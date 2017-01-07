@@ -8,6 +8,7 @@ import main.java.br.com.projetofinanceiro.bo.Orcamento;
 
 public class IHIT extends TemplateDeImpostoCondicional{
 
+
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() * (0.01 * orcamento.getListaItens().size());

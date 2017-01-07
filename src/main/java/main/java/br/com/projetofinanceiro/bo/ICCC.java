@@ -1,7 +1,14 @@
 package main.java.br.com.projetofinanceiro.bo;
 
-public class ICCC implements Imposto{
+public class ICCC extends Imposto{
 
+	public ICCC() {
+	}
+
+	public ICCC(Imposto imposto) {
+		super(imposto);
+	}
+	
 	@Override
 	public double calcula(Orcamento orcamento) {
 		if (orcamento.getValor() < 1000) {
