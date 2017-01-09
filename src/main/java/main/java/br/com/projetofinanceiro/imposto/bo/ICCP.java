@@ -1,10 +1,20 @@
 package main.java.br.com.projetofinanceiro.imposto.bo;
 
 import br.com.projetofinanceiro.bo.Item;
+import main.java.br.com.projetofinanceiro.bo.Imposto;
 import main.java.br.com.projetofinanceiro.bo.Orcamento;
 
 public class ICCP extends TemplateDeImpostoCondicional {
 
+	public ICCP() {
+		super();
+		
+	}
+
+	public ICCP(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() * 0.6 + calculoDoOutroImposto(orcamento);

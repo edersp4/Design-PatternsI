@@ -6,6 +6,14 @@ import main.java.br.com.projetofinanceiro.bo.Orcamento;
 public abstract class TemplateDeImpostoCondicional extends Imposto {
 
 	
+	public TemplateDeImpostoCondicional() {
+		super();
+	}
+	
+	public TemplateDeImpostoCondicional(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
 
 	@Override
 	public double calcula(Orcamento orcamento) {
