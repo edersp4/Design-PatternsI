@@ -8,6 +8,12 @@ import main.java.br.com.projetofinanceiro.investimento.bo.Conta;
 
 public class FiltroMenorQue100Reais extends Filtro {
 
+	public FiltroMenorQue100Reais(Filtro outroFiltro) {
+		super(outroFiltro);
+	}
+	public FiltroMenorQue100Reais() {
+	}
+	
 	@Override
 	public List<Conta> filtra(List<Conta> contas) {
 		List<Conta> filtradas = new ArrayList<>();

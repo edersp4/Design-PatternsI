@@ -1,10 +1,13 @@
 package main.java.br.com.projetofinanceiro.investimento.bo;
 
+import java.util.Calendar;
+
 public class Conta {
 	private double saldo;
 	private String titular;
 	private String numero;
 	private String agencia;
+	private Calendar dataAbertura;
 	
 	
 	public Conta(double saldo, String titular) {
@@ -31,5 +34,9 @@ public class Conta {
 
 	public String getAgencia() {
 		return this.agencia;
+	}
+
+	public Calendar getDataAbertura() {
+		return this.dataAbertura;
 	}
 }
