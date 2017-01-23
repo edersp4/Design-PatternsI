@@ -2,12 +2,15 @@ package main.java.br.com.projetofinanceiro.investimento.bo;
 
 import java.util.Calendar;
 
+import br.com.projetofinanceiro.bo.EstadoDaConta;
+
 public class Conta {
 	private double saldo;
 	private String titular;
 	private String numero;
 	private String agencia;
 	private Calendar dataAbertura;
+	public EstadoDaConta estado;
 	
 	
 	public Conta(double saldo, String titular) {
@@ -38,5 +41,9 @@ public class Conta {
 
 	public Calendar getDataAbertura() {
 		return this.dataAbertura;
+	}
+	
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 }
