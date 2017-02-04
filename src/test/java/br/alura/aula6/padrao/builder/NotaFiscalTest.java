@@ -14,7 +14,7 @@ public class NotaFiscalTest {
 		
 		CriadorDeNotaFiscal criador = new CriadorDeNotaFiscal(); 
 		
-		criador.paraEmpresa("Caelum Ensino e Inovação");
+		criador.paraEmpresa("Caelum Ensino e InovaÃ§Ã£oo");
 		List<ItemDaNota>itens = null;
 		double valorTotal = 0;
 		
@@ -24,7 +24,7 @@ public class NotaFiscalTest {
 		
 		double impostos = valorTotal * 0.05;
 		
-		NotaFiscal notaFiscal = new NotaFiscal("razao social qualquer", "um cnpj", Calendar.getInstance() , valorTotal, impostos, itens, "observações quaisquer aqui");
+		NotaFiscal notaFiscal = new NotaFiscal("razao social qualquer", "um cnpj", Calendar.getInstance() , valorTotal, impostos, itens, "observaï¿½ï¿½es quaisquer aqui");
 	}
 
 }
